@@ -15,3 +15,12 @@ Next.js（App Router）と OpenAI API を使ったデモアプリ。
 - 任意のエディタ（VS Code 推奨）
 - OpenAI API Key
 - 開発時はNVMを使用
+
+## 環境構築
+cd my-llm-chat
+npx create-next-app@latest my-llm-chat --typescript
+
+envにAPIキー設定
+
+
+http://localhost:3000
