@@ -35,10 +35,10 @@ export default function Home() {
 
       const data = await res.json();
 
-      if (data.reply) {
+      if (data.chatAiReply) {
         const assistantMessage: ChatMessage = {
           role: "assistant",
-          content: data.reply,
+          content: data.chatAiReply,
         };
         setMessages((prev) => [...prev, assistantMessage]);
       }
@@ -65,7 +65,7 @@ export default function Home() {
       <div className="w-full max-w-xl border rounded-lg p-4 space-y-4">
         <h1 className="text-xl font-bold">LLM Chat Demo</h1>
 
-        <div className="border rounded-md h-72 overflow-y-auto p-2 text-sm space-y-2 bg-slate-50">
+        <div className="border rounded-md h-72 overflow-y-auto p-2 text-sm space-y-2 color-custom-bg-chatbox">
           {messages.length === 0 && (
             <p className="text-gray-400">メッセージを送信してみてください。</p>
           )}
