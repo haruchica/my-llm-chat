@@ -1,10 +1,14 @@
+## 概要
+WEBブラウザ上でGoogleのLLMを使用して雑談できる。
+無料枠の都合でGoogleのLLMを使用
+
 # TypeScript × Next.js × LLM Chat
 
 Next.js（App Router）と OpenAI API を使ったデモアプリ。
 
 - フロントエンド: Next.js + React + TypeScript
 - API: Next.js API Routes（`app/api/chat/route.ts`）
-- LLM: OpenAI Chat Completions API（例: `gpt-4o-mini`）
+- LLM: GEMINI API
 
 ---
 
@@ -22,5 +26,6 @@ npx create-next-app@latest my-llm-chat --typescript
 
 envにAPIキー設定
 
-
+## ローカル用メモ
 http://localhost:3000
+
