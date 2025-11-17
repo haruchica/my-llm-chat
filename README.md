@@ -14,11 +14,10 @@ Next.js（App Router）と OpenAI API を使ったデモアプリ。
 
 ## 環境
 
-- Node.js **20以上**
+- Node.js **20以上** 開発時はNVMを使用
 - npm（Node.js に同梱）
 - 任意のエディタ（VS Code 推奨）
-- OpenAI API Key
-- 開発時はNVMを使用
+- Google LLM API Key
 
 ## 環境構築
 cd my-llm-chat
