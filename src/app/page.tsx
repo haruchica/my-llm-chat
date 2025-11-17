@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 type ChatMessage = {
   role: "user" | "assistant";
@@ -11,6 +11,14 @@ export default function Home() {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const chatBoxRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (chatBoxRef.current) {
+      chatBoxRef.current.scrollTop = chatBoxRef.current.scrollHeight;
+    }
+  }, [messages]);
+
 
   const handleSend = async () => {
     if (!input.trim() || loading) return;
@@ -65,7 +73,7 @@ export default function Home() {
       <div className="w-full max-w-xl border rounded-lg p-4 space-y-4">
         <h1 className="text-xl font-bold">LLM Chat Demo</h1>
 
-        <div className="border rounded-md h-72 overflow-y-auto p-2 text-sm space-y-2 color-custom-bg-chatbox">
+        <div ref={chatBoxRef} className="border rounded-md h-72 overflow-y-auto p-2 text-sm space-y-2 color-custom-bg-chatbox">
           {messages.length === 0 && (
             <p className="text-gray-400">メッセージを送信してみてください。</p>
           )}
